@@ -1,0 +1,148 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>{% block title %} {% endblock %}</title>  
+<style>
+   
+   *{
+    margin: 0; padding:0; box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    
+}
+     
+nav{
+    width: 100%; height: 100px;
+    /*background-color:  red;*/
+    display: flex; color: white;
+    
+}
+
+.logo{
+    width: 50%;
+    height: 100px;
+    background: #303036;
+}
+
+.logoo{
+    height: 150px;
+    width: auto;
+    float: left;
+    margin-top:-27px;
+
+}
+
+.logo h1{
+    line-height: 100px;
+    padding-left: 50px;
+}
+
+.menu{
+    width: 50%; height: 100px;
+    background: #303036;
+}
+
+.menu button{
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    background: linear-gradient(57deg, hsl(273, 100%, 39%) , #1E4D92 ); 
+    border-radius: 4px 4px 4px 4px;
+    padding: 10px 25px ; 
+}
+
+#firstlist{
+	color: orange;
+}
+#seclist
+{
+    color: white;
+}
+.menu ul{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:  center;
+}
+
+.menu ul li{
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.menu .btn{
+    width: 150px;
+    margin-top: 0px;
+    padding: 14px 20px 14px 20px;
+    background-color: #2f8be0;
+    border-radius: 35px;
+    text-align: center
+}
+
+.menu .btn a{
+    font-size: 1.3vw;
+    color: #fff;
+}
+
+
+    </style> 
+    {% block css %}
+     {% endblock %}
+     
+  </head>
+  <body class="main">
+    <nav>
+ 
+      <div class="logo">
+       <img src="{% static 'img/Koala-01-1.png'%}" class="logoo">
+       <h1>Aboli Hospital</h1>
+      </div>
+      <div class="menu"> 
+       <ul>
+        <li  role="presentation">&#171; <a id="firstlist" href="/">HOME</a></li>
+        
+        <li><a id="seclist" href="/about">ABOUTUS</a></li>
+        <li><a id="seclist" href="/contactus">CONTACTUS</a></li>
+        <li><a id="seclist" href="/login">LOGIN</a> &#187;</li>
+        <div class="btn">
+            <a href="#">HELPLINE</a>
+        </div>
+    </div>  
+       </ul>
+     </nav>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+     
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    {% block body %} {% endblock %}
+    {% block js %}
+    {% endblock %} 
+</body>
+</html>

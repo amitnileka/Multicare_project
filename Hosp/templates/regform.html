@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+     <html lang="en">
+          <head>
+            <meta charset="UTF-8"> 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Responsive Registration Form</title>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+            <style>
+                *{ 
+    box-sizing: border-box; 
+} 
+body{ 
+    margin: 0; 
+    padding: 0; 
+    background-color: hsl(108, 56%, 83%); 
+    font-family: 'Montserrat', sans-serif; 
+}
+input{ 
+    outline: none; 
+    border: none; 
+} 
+.heading{ 
+    width: 80%; 
+} 
+.logo{ 
+    height: 150px;
+    width: auto;
+    float: left;
+    margin-top:-27px;
+
+}
+.heading h1{ 
+    font-size: 2rem; 
+    font-weight: 400; 
+    color: #412277; 
+}
+.heading h3{
+    text-align: center;
+}
+.container{ 
+    width: 80%; 
+    position: absolute; 
+    left: 50%; 
+    top: 65%; 
+    transform: translate(-50%,-50%); 
+    height: 130vh; 
+    background-color: #f8f9fb;
+    display: flex; 
+    box-shadow: 5px 10px 38px rgba(0,0,0,0.2); 
+}
+.form{ 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    width: 55%; 
+}
+.image{ 
+    width: 45%; 
+}
+.img{ 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+.wrap2{ 
+    width: 80%; 
+    position: relative;
+    border-bottom: 2px solid #b2b2b2; 
+    margin-bottom: 13px; 
+}
+.wrap{ 
+    display: flex; 
+    width: 80%; 
+    justify-content: center; 
+}
+.f1{ 
+    border-bottom:2px solid #b2b2b2; 
+    width: 40%; 
+    position: relative; 
+}
+.f2{ 
+    border-bottom:2px solid #b2b2b2 ; 
+    margin-left: auto; 
+    width: 50%; 
+    position: relative; 
+}
+label{ 
+    font-size: 12px;
+    color: #676768; 
+    line-height: 1.5; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    display: flex; 
+    align-items: center; 
+    width: 80%; 
+    min-height: 25px; 
+    border-bottom: none; 
+    padding: 15px 0px; 
+    margin-top: 10px; 
+    margin-bottom: 0px; 
+    padding-bottom: 2px; 
+}
+input{ 
+    display: block; 
+    width: 100%; 
+    font-size: 18px; 
+    background: transparent; 
+    color: #0f0f0f; 
+    font-weight: 500; 
+    padding: 10px 0px; 
+}
+    /******BUTTON****/ 
+.btn{ 
+    margin-top: 20px;
+    width: 200px; 
+    height: 50px; 
+    border-radius: 40px; 
+    outline: none; 
+    font-weight: 500; 
+    font-size: 1rem; 
+    border: none; 
+    background: #445a94; 
+    color: #fff; 
+    box-shadow: 8px 10px 30px rgba(0, 0, 0, 0.329); 
+    transition: 0.4s; 
+}
+.btn:hover{ 
+    background: #4b2888; 
+    color: #fff; 
+}
+    /********INPUT ANIMATION-SPAN*****/
+.focus-input{ 
+    position: absolute; 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    pointer-events: none;
+}
+.focus-input::before{ 
+    content: ""; 
+    display: block; 
+    position: absolute; 
+    bottom: -1px; 
+    left: 0; 
+    width: 0; 
+    height: 2px; 
+    transition: all 0I6s; 
+    background: #412277; 
+}
+input:focus + .focus-input::before{ 
+    width: 100%; 
+}
+.has-val.input + .focus-input::before{ 
+    width: 100%; 
+}
+.focus-input2{ 
+    position: absolute; 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    pointer-events: none;
+}
+.focus-input2::before{ 
+    content: ""; 
+    display: block; 
+    position: absolute; 
+    bottom: -1px; 
+    left: 0; 
+    width: 0; 
+    height: 2px; 
+    transition: all 016s; 
+    background: #412277; 
+}
+input:focus + .focus-input2::before{ 
+    width: 100%; 
+}
+.has-val.input + .focus-input2::before{ 
+    width: 100%; 
+}
+input[type="number"]{ 
+    overflow: hidden; 
+} 
+/*****RESPONSIVE** /********/
+@media(max-width:1250px){ 
+    .container{ 
+        width: 90%;
+    } 
+}
+@media(max-width:768px){ 
+    .container{ 
+        width: 100%; 
+        height: 100vh !important; 
+        position: static; 
+        transform: translate(0,0); 
+    } 
+}
+@media(max-width:1000px){
+    .image{ 
+        display: none; 
+    }
+    .container{ 
+        height: 95vh; 
+    }
+    .form{ 
+        width: 100%;
+    }
+}
+@media(max-width:500px){ 
+    .wrap{ 
+        flex-direction: column;
+    }
+    .f1,.f2{
+        width: 100%;
+        margin: 0px;
+    }
+}
+    
+            </style>
+        </head>
+        <body>
+               <div class="container">
+                    <div class="form"> 
+                        <div class="heading"> 
+                            <img src="images/Koala.png" class="logo">
+                            <h1>Koala Hospital</h1>
+                            <h3>Registration Form</h3>
+                            </div>
+                            <!--Form--> 
+                            <div class="wrap"> 
+                            
+                                </div>
+                                <div class="wrap2"> 
+                                    <label>Name</label> 
+                                    <input type="text"/> 
+                                    <span class="focus-input"></span> 
+                                </div> 
+                                <div class="wrap2"> 
+                                    <label>E-Mail</label>
+                                    <input type="text">
+                                    <span class="focus-input2"></span>
+                                </div> 
+                                <div class="wrap2"> 
+                                    <label>Password</label>
+                                    <input type="text">
+                                    <span class="focus-input2"></span>
+                                </div> 
+                                <div class="wrap2"> 
+                                    <label>Username</label>
+                                    <input type="text"> 
+                                    <span class="focus-input2"></span>
+                                </div> 
+                                <div class="wrap2"> 
+                                    <label>Gender</label>
+                                    <input type="text"> 
+                                    <span class="focus-input2"></span>
+                                </div> 
+                                
+                                <div class="wrap2"> 
+                                    <label>Phone Number</label>
+                                    <input type="number">
+                                    <span class="focus-input2"></span>
+                                </div>
+                                <div class="wrap2"> 
+                                    <label>Birthdate</label>
+                                    <input type="number" , placeholder="dd/mm/yy ">
+                                    <span class="focus-input2"></span>
+                                </div>
+                                <div class="wrap2"> 
+                                    <label>Blood Group</label>
+                                    <input type="text">
+                                    <span class="focus-input2"></span>
+                                </div>
+
+                                <button class="btn">Register</button>
+
+</div> 
+<!-- Image--> 
+<div class="image">
+    <img src="images/regimage.jpg" class="img" alt=""/>
+</div> 
+</div>
+</body>
+     </html>

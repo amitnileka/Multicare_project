@@ -1,0 +1,132 @@
+{% extends 'patientinfo.html' %}
+{% load static %}
+{% block title %}
+    <title>View Appointments</title>
+    {% endblock %}
+{% block css %}
+<style>
+
+  .content{
+    width: (100% - 250px);
+    margin-top: 60px;
+    padding: 20px;
+    margin-left: 250px;
+   
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: 0.5s;
+  }
+  div.b{
+      margin-left: 0px;
+      margin-top: 30px;
+      color:gray;
+  }
+  .Abody
+  {
+      margin-top: 50px;
+      height: 600px;
+     
+      width: 1000px;
+  }
+  .Abody_A1
+  {
+      
+      margin-left: 20px;
+      height: 450px;
+      
+      padding: 15px;
+  
+      
+  }* {
+    font-family: sans-serif; /* Change your font family */
+  }
+  
+  .content-table {
+    border-collapse: collapse;
+    width: 800px;
+    height: 400px;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  .content-table th,
+  .content-table td {
+    padding: 12px 15px;
+  }
+  
+  .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    font-size: large;
+  }
+  
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  }
+  
+  
+  </style>
+{% endblock %}
+{% block body_block%}
+<div class="content">
+    <div class="col-md-8 offset-md-2">
+      <div class="b">
+        <h1>USER | APPOINTMENT HISTORY</h1>
+        <hr style="height: 3px; border-width: 0; color: gray; background-color: gray; margin-right: 30px;">
+    </div>
+    <div class="Abody">
+        <div class="Abody_A1">
+            <table class="content-table">
+                <thead>
+                  <tr>
+                    <th>
+                      Doctor Name
+                    </th>
+                    <th>Patient Gender</th>
+                    <th>Appointment Date</th>
+                    <th>Appointemnt Time</th>
+                    <th>Symptoms</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for i in stu %}
+                  <tr>
+                    <td>{{i.doctorname}}</td>
+                    <td>{{i.gender}}</td>
+                    <td>{{i.appointmentdate}}</td>
+                    <td>{{i.appointmenttime}}</td>
+                    <td>{{i.symptoms}}</td>
+                    <td>{{i.status}}</td>
+                    <td><a href="{% url 'patient_delete_appointment' i.id %}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger">Delete</a></td>
+                </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

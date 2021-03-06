@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Add Prescription</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #ebebeb
+
+}
+
+
+header{
+  z-index: 1;
+  position: fixed;
+  background: #4b086d;
+  padding: 20px;
+  width: calc(100% - 0%);
+  top: 0;
+  height: 60px;
+}
+
+.left_area h3{
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.left_area span{
+  color: #19B3D3;
+}
+
+.logout_btn{
+  padding: 5px;
+  background: #19B3D3;
+  text-decoration: none;
+  float: right;
+  margin-top: -30px;
+  margin-right: 40px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.5s;
+  transition-property: background;
+}
+
+.logout_btn:hover{
+  background: #0B87A6;
+}
+
+
+.container{
+  width: 90%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  margin-top: 400px;
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+
+.add{
+  width: 100%;
+  background-color: rgb(216, 217, 219);
+  display: inline-block;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  padding: 25px 8px;
+  border-radius: 5px;
+
+
+}
+.add input{
+  width: 20%;
+}
+.user-details .input-add input{
+  height: 45px;
+  width: 20%;
+  outline: none;
+  font-size: 12px;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-add textarea{
+  height: 45px;
+  width: 20%;
+  outline: none;
+  font-size: 12px;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-add input:focus,
+.user-details .input-add input:valid{
+  border-color: #9b59b6;
+}
+
+
+form .input-add span.details{
+  display: block;
+  font-weight: 200;
+  font-size: 12px;
+  display: inline-block;
+  padding: 5px;
+
+}
+
+.btn{
+  border: none;
+  color: green;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 30px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1{
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50;
+}
+.button1:hover{
+  background-color: #4caf50;
+  color: white;
+}
+
+
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+
+</style>
+
+
+   </head>
+<body>
+
+  <header>
+    <label for="check">
+      <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left_area">
+      <h3>Aboli <span>Hospital</span></h3>
+    </div>
+    <div class="right_area">
+      <a href="{% url 'logoutpg' %}" class="logout_btn">Logout</a>
+    </div>
+  </header>
+
+
+  <div class="container">
+    <div class="title">Create Prescription</div>
+    <h3 style="margin-top: 20px;">Patient Details</h3>
+    <div class="content">
+      <form method="post">
+          {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input type="number" name="age" placeholder="Enter age" required>
+          </div>
+          <div class="input-box">
+            <span class="details">BP</span>
+            <input type="text" name="bp" placeholder="Enter your BP" >
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" name="phonenumber" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Weight</span>
+            <input type="number" name="weight" placeholder="Enter your Weight" required>
+          </div>
+          <div class="input-box">
+            <span class="details">City</span>
+            <input type="text" name="city" placeholder="Confirm your city/village" required>
+          </div>
+        </div>
+
+
+        <h3 style="margin-top: 20px;">Medicine Details</h3>
+        <div class="content">
+          
+            <div class="user-details">
+              <div  class="add">
+              <div class="input-add">
+                <span class="details">Medicine Name</span>
+                <input type="text" name="medname" placeholder="Enter Medicine name" required>
+                <span class="details">MG/ML</span>
+                <input style="width: 10%;" name="mg" type="number" placeholder="MG/ML" required>
+                <span class="details">Dose</span>
+                <input style="width: 10%;" name="dose" type="number" placeholder="does" required>
+                <span class="details">comment</span>
+                <input style="width: 10%;" name="comment" type="text" placeholder="comment" >
+                <button class="btn button1">&#43;</button>
+              </div>
+            </div>
+              
+            </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
