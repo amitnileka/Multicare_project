@@ -275,6 +275,70 @@ form .user-details .input-box{
   }
 }
 
+
+
+/*  Medicine div  */
+
+.Abody
+  {
+     
+      width: 1000px;
+  }
+  .Abody_A1
+  {
+      
+      margin-left: 20px;
+      
+      padding: 15px;
+  
+      
+  }* {
+    font-family: sans-serif; /* Change your font family */
+  }
+  
+  .content-table {
+    border-collapse: collapse;
+    width: 970px;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  .content-table th,
+  .content-table td {
+    padding: 12px 15px;
+  }
+  
+  .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    font-size: large;
+  }
+  
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  }
+
+
+
 </style>
 
 
@@ -331,23 +395,36 @@ form .user-details .input-box{
         <h3 style="margin-top: 20px;">Medicine Details</h3>
         <div class="content">
           
-            <div class="user-details">
-              <div  class="add">
-              <div class="input-add">
-                <span class="details">Medicine Name</span>
-                <input type="text" name="medname" value="{{i.medname}}">
-                <span class="details">MG/ML</span>
-                <input style="width: 10%;" name="mg" type="number" value="{{i.medmg}}">
-                <span class="details">Dose</span>
-                <input style="width: 10%;" name="dose" type="number" value="{{i.dose}}">
-                <span class="details">comment</span>
-                <input style="width: 10%;" name="comment" type="text" value="{{i.comment}}">
-                <button class="btn button1">&#43;</button>
-              </div>
+          <div class="Abody">
+            <div class="Abody_A1">
+                <table class="content-table">
+                    <thead>
+                      <tr>
+                        <th>
+                          Medicine Name
+                        </th>
+                        <th>MG/ML</th>
+                        <th>Dose</th>
+                        <th>Comment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in stu %}
+                      <tr>
+                        <td>{{i.doctorname}}</td>
+                        <td>{{i.gender}}</td>
+                        <td>{{i.appointmentdate}}</td>
+                        <td>{{i.appointmenttime}}</td>
+                        <td>{{i.symptoms}}</td>
+                        <td>{{i.status}}</td>
+                        <td><a href="{% url 'patient_delete_appointment' i.id %}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
             </div>
-              
-            </div>
-            {% endfor %}
+        </div>
+                {% endfor %}
             <div class="gender-details">
               <input type="radio" name="gender" id="dot-1" checked>
               <span class="gender-title">Gender :</span>
